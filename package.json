@@ -2,7 +2,7 @@
   "name": "cv-builder",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wikicrafter.github.io/cvbuilder1/",
+  "homepage": "https://wikicrafter.github.io/cvbuilder/",
   "dependencies": {
     "@testing-library/jest-dom": "^6.2.0",
     "@testing-library/react": "^14.1.2",
