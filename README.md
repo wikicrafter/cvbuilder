@@ -1,4 +1,4 @@
-# CV Builder
+# CV Builder [Live Demo](https://reactappcvbuilder.netlify.app/)
 
 A React app which allows users to create their own CV (Resume) using a ready template and allows download feature  in a PDF format.
 
