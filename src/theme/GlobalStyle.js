@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 62.5%;
-    line-height: 1.6;
+    line-height: 1.2;
     /* Footer support */
     position: relative;
     min-height: 100%;
@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: "Nunito", sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     background-color: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.dark};
   }
