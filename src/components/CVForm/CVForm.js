@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Personal from "./Personal";
 import Education from "./Education";
 import Experience from "./Experience";
+import Project from "./Project";
 import Button from "../Utils/Button";
 
 const CVForm = ({
@@ -15,6 +16,9 @@ const CVForm = ({
   onChangeEducation,
   onAddEducation,
   onDeleteEducation,
+  onChangeProject,
+  onAddProject,
+  onDeleteProject,
   onPrint,
   onLoadExample,
   onReset,
@@ -33,6 +37,12 @@ const CVForm = ({
         onChange={onChangeEducation}
         onAdd={onAddEducation}
         onDelete={onDeleteEducation}
+      />
+      <Project
+        projects={cv.projects}
+        onChange={onChangeProject}
+        onAdd={onAddProject}
+        onDelete={onDeleteProject}
       />
       <>
         <Button text="Generate PDF" onClick={onPrint} primary></Button>
@@ -66,6 +76,9 @@ CVForm.propTypes = {
   onChangeEducation: PropTypes.func.isRequired,
   onAddEducation: PropTypes.func.isRequired,
   onDeleteEducation: PropTypes.func.isRequired,
+  onChangeProject: PropTypes.func.isRequired,
+  onAddProject: PropTypes.func.isRequired,
+  onDeleteProject: PropTypes.func.isRequired,
   onPrint: PropTypes.func.isRequired,
   onLoadExample: PropTypes.func.isRequired,
   onReset: PropTypes.func.isRequired,

@@ -78,6 +78,29 @@ const exampleCV = {
       to: 'To',
     },
   ],
+  projects: [
+    {
+      id: uuidv4(),
+      projectName: 'Portfolio Website',
+      date: '2024',
+      description:
+        'Built a responsive portfolio with React and styled-components; implemented dynamic routing and optimized Lighthouse scores to 95+.',
+    },
+    {
+      id: uuidv4(),
+      projectName: 'E-commerce Dashboard',
+      date: '2023',
+      description:
+        'Developed an analytics dashboard visualizing sales KPIs; integrated REST APIs and added role-based access control.',
+    },
+    {
+      id: uuidv4(),
+      projectName: 'Landing Page Redesign',
+      date: '2022',
+      description:
+        'Redesigned marketing site with A/B tested hero copy and modular components; delivered 18% uplift in conversions.',
+    },
+  ],
 };
 
 // Export the exampleCV object

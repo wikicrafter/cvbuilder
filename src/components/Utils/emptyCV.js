@@ -33,6 +33,14 @@ const exampleCV = {
       to: "",
     },
   ],
+  projects: [
+    {
+      id: uuidv4(),
+      projectName: "",
+      date: "",
+      description: "",
+    },
+  ],
 };
 
 export default exampleCV;
