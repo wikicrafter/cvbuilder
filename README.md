@@ -60,6 +60,10 @@ Before you begin, ensure you have the following installed on your machine:
     ```
     This will build the React app and then package it as a desktop application installer (e.g., .exe, .dmg) in the `dist` folder.
 
+## Windows Release
+
+- Pre-release portable `.exe`: [Download CV BuilderX 0.1.0](https://github.com/wikicrafter/cvbuilder/releases/download/v0.1.0/CV.BuilderX.0.1.0.exe)
+
 ## Testing
 
 The application includes a suite of automated tests to ensure reliability.
