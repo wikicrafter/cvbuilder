@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled, { css } from "styled-components";
 
 const Button = ({ text, onClick, primary, secondary, red }) => {
@@ -8,6 +9,7 @@ const Button = ({ text, onClick, primary, secondary, red }) => {
       primary={primary}
       secondary={secondary}
       red={red}
+      aria-label={text}
     >
       {text}
     </ButtonWrapper>
@@ -76,3 +78,11 @@ const ButtonWrapper = styled.button`
 `;
 
 export default Button;
+
+Button.propTypes = {
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+  primary: PropTypes.bool,
+  secondary: PropTypes.bool,
+  red: PropTypes.bool,
+};
