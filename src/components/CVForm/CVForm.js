@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import Personal from "./Personal";
 import Education from "./Education";
@@ -46,7 +47,8 @@ const CVFormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 210mm;
+  width: 100%;
+  max-width: 210mm;
   padding: 2rem;
   border-radius: 5px;
   background-color: ${({ theme }) => theme.colors.light};
@@ -54,3 +56,17 @@ const CVFormWrapper = styled.div`
 `;
 
 export default CVForm;
+
+CVForm.propTypes = {
+  cv: PropTypes.object.isRequired,
+  onChangePersonal: PropTypes.func.isRequired,
+  onChangeExperience: PropTypes.func.isRequired,
+  onAddExperience: PropTypes.func.isRequired,
+  onDeleteExperience: PropTypes.func.isRequired,
+  onChangeEducation: PropTypes.func.isRequired,
+  onAddEducation: PropTypes.func.isRequired,
+  onDeleteEducation: PropTypes.func.isRequired,
+  onPrint: PropTypes.func.isRequired,
+  onLoadExample: PropTypes.func.isRequired,
+  onReset: PropTypes.func.isRequired,
+};

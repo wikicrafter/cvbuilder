@@ -137,7 +137,22 @@ const Main = () => {
   const componentRef = useRef()
 
   // throws warning because react-to-print uses findDOMNode
-  const handlePrint = useReactToPrint({ content: () => componentRef.current })
+  const validateCV = () => {
+    if (
+      !cv.personalInfo.firstName ||
+      !cv.personalInfo.lastName ||
+      !cv.personalInfo.title
+    ) {
+      alert("Please fill in the essential personal information fields.");
+      return false;
+    }
+    return true;
+  };
+
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+    onBeforeGetContent: validateCV,
+  });
 
   return (
     <MainWrapper>
@@ -154,7 +169,9 @@ const Main = () => {
         onLoadExample={handleLoadExample}
         onReset={handleReset}
       />
-      <CVPreview cv={cv} ref={componentRef} />
+      <CVPreviewWrapper>
+        <CVPreview cv={cv} ref={componentRef} />
+      </CVPreviewWrapper>
     </MainWrapper>
   )
 }
@@ -174,5 +191,25 @@ const MainWrapper = styled.main`
   @media (max-width: 1600px) {
     flex-direction: column;
     align-items: center;
+    gap: 2rem;
   }
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
+`
+
+const CVPreviewWrapper = styled.div`
+  overflow-x: auto;
+  max-width: 100%;
+  padding: 1rem;
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 `

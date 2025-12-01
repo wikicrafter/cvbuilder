@@ -2,12 +2,15 @@
   "name": "cvbuilder",
   "version": "0.1.0",
   "private": true,
+  "main": "public/electron.js",
+  "homepage": "./",
   "_comment": "`homepage1: `https://wikicrafter.github.io/cvbuilder/`,",
-  
   "dependencies": {
     "@testing-library/jest-dom": "^6.2.0",
     "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.5.2",
+    "electron-is-dev": "^3.0.1",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
@@ -23,7 +26,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "electron:dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron:build": "npm run build && electron-builder",
+    "preelectron:build": "npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +50,11 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1"
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "electron": "^39.2.4",
+    "electron-builder": "^26.0.12",
+    "gh-pages": "^6.1.1",
+    "wait-on": "^9.0.3"
   }
 }
