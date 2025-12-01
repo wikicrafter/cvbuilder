@@ -63,7 +63,7 @@ Before you begin, ensure you have the following installed on your machine:
 ## Windows Release
 
 - Pre-release portable `.exe`: [Download CV BuilderX 0.1.0](https://github.com/wikicrafter/cvbuilder/releases/download/v0.1.0/CV.BuilderX.0.1.0.exe)
-- Pre-release portable `.exe zip file `: [Download CV BuilderX 0.1.0](https://github.com/wikicrafter/cvbuilder/archive/refs/tags/v0.1.0.zip)
+
 
 
 
