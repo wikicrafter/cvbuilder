@@ -126,6 +126,44 @@ const Main = () => {
     })
   }
 
+  const handleChangeProject = (e, id) => {
+    const { name, value } = e.target
+
+    setCv((prevState) => {
+      const newProjects = prevState.projects.map((projectItem) => {
+        if (projectItem.id === id) {
+          return { ...projectItem, [name]: value }
+        }
+        return projectItem
+      })
+      return { ...prevState, projects: [...newProjects] }
+    })
+  }
+
+  const handleAddProject = () => {
+    setCv((prevState) => ({
+      ...prevState,
+      projects: [
+        ...prevState.projects,
+        {
+          id: uuidv4(),
+          projectName: '',
+          date: '',
+          description: '',
+        },
+      ],
+    }))
+  }
+
+  const handleDeleteProject = (id) => {
+    setCv((prevState) => {
+      const newProjects = prevState.projects.filter(
+        (projectItem) => projectItem.id !== id
+      )
+      return { ...prevState, projects: [...newProjects] }
+    })
+  }
+
   const handleLoadExample = () => {
     setCv(exampleCV)
   }
@@ -165,6 +203,9 @@ const Main = () => {
         onChangeEducation={handleChangeEducation}
         onAddEducation={handleAddEducation}
         onDeleteEducation={handleDeleteEducation}
+        onChangeProject={handleChangeProject}
+        onAddProject={handleAddProject}
+        onDeleteProject={handleDeleteProject}
         onPrint={handlePrint}
         onLoadExample={handleLoadExample}
         onReset={handleReset}

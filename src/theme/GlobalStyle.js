@@ -60,6 +60,25 @@ const GlobalStyle = createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+  /* Print styling to remove default margins and enforce A4 size */
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  @media print {
+    html,
+    body {
+      margin: 0;
+      background: #fff;
+    }
+
+    #root {
+      margin: 0;
+      padding: 0;
+    }
+  }
 `;
 
 export default GlobalStyle;

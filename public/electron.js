@@ -12,7 +12,7 @@ function createWindow() {
         height: 680,
         webPreferences: {
             nodeIntegration: true,
-            contextIsolation: false, // For simple apps, or use preload script for security
+            contextIsolation: false,
         },
     });
 
@@ -22,11 +22,11 @@ function createWindow() {
             : `file://${path.join(__dirname, '../build/index.html')}`
     );
 
-    if (isDev) {
-        // Open the DevTools.
-        // BrowserWindow.addDevToolsExtension('<location to your react dev tools extension>');
-        mainWindow.webContents.openDevTools();
-    }
+    // DevTools are now disabled in production
+    // Uncomment the line below if you want DevTools in development
+    // if (isDev) {
+    //   mainWindow.webContents.openDevTools();
+    // }
 
     mainWindow.on('closed', () => (mainWindow = null));
 }
