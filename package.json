@@ -1,8 +1,8 @@
 {
   "name": "cvbuilder",
   "version": "0.1.0",
-  "description": "A robust and mobile-friendly React application for creating professional CVs with PDF export and desktop support",
-  "author": "Your Name",
+  "description": "A robust application for creating professional CVs with PDF export and desktop support",
+  "author": "Charly",
   "private": true,
   "main": "public/electron.js",
   "homepage": "./",
@@ -61,19 +61,28 @@
   },
   "build": {
     "appId": "com.cvbuilder.app",
-    "productName": "CV Builder",
+    "productName": "CV BuilderX",
     "files": [
       "build/**/*",
       "public/electron.js"
     ],
-    "asarUnpack": [
-      "build/**/*"
-    ],
+    "asar": true,
+    "compression": "normal",
     "directories": {
       "buildResources": "public"
     },
     "win": {
-      "target": "portable"
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "portable": {
+      "artifactName": "CV-Builder-Portable.exe"
     },
     "mac": {
       "target": "dmg",
